@@ -1,0 +1,60 @@
+﻿@page
+@model CapstoneProjectCustomerListWebApp.Pages.CustomerList.CreateModel
+
+
+    <br />
+    <h2 class="text-info">Create New Customer</h2>
+    <br />
+
+<div class="border container" style="padding: 30px;">
+    <form method="post">
+        <div class="text-danger" asp-validation-summary="ModelOnly"></div>
+        <div class="form-group row">
+            <div class="col-3">
+                <label asp-for="Customer.CustomerName"></label>
+            </div>
+            <div class="col-4">
+                <input asp-for="Customer.CustomerName" class="form-control"/>
+            </div>
+            @*error validation*@
+            <span asp-validation-for="Customer.CustomerName" class="text-danger"></span>
+        </div>
+        <div class="form-group row">
+            <div class="col-3">
+                <label asp-for="Customer.TimeSpan"></label>
+            </div>
+            <div class="col-4">
+                <input asp-for="Customer.TimeSpan" class="form-control" />
+            </div>
+            @*Not showing up. Come back to it. *@
+            <span asp-validation-for="Customer.TimeSpan" class="text-danger"></span>
+        </div>
+        <div class="form-group row">
+            <div class="col-3">
+                <label asp-for="Customer.TimeStamp"></label>
+            </div>
+            <div class="col-4">
+                <input asp-for="Customer.TimeStamp" class="form-control" />
+            </div>
+            <span asp-validation-for="Customer.TimeStamp" class="text-danger"></span>
+        </div>
+        <div class="form-group row">
+            <div class="col-2 offset-3">
+                <input type="submit" value="Create" class="btn btn-primary form-control"/>
+
+            </div>
+            @*this is not expanding out as it should*@
+            <div class="col-3">
+                <a asp-page="Index" class="btn btn-success form-group">Back to List</a>
+            </div>
+
+        </div>
+    </form>
+</div>
+
+@*Error validation on client side*@
+
+@section Scripts
+{
+    <partial name="Shared/_ValidationScriptsPartial"/>
+}
