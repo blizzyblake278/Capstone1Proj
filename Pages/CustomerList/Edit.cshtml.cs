@@ -1,6 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using CapstoneProjectCustomerListWebApp.CustomerList;
 using Microsoft.AspNetCore.Mvc;
@@ -10,7 +7,7 @@ namespace CapstoneProjectCustomerListWebApp.Pages.CustomerList
 {
     public class EditModel : PageModel
     {
-        private ApplicationDbContext _db;
+        private readonly ApplicationDbContext _db;
 
 
         public EditModel(ApplicationDbContext db)
