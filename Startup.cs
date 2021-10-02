@@ -28,6 +28,7 @@ namespace CapstoneProjectCustomerListWebApp
             // done to include entitiy fraemwork inside the config pipeline
             //push to db after this using nuget pm console
             services.AddDbContext<ApplicationDbContext>(option => option.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddControllersWithViews(); //adds the API calls
             services.AddRazorPages().AddRazorRuntimeCompilation();
         }
 
@@ -54,6 +55,7 @@ namespace CapstoneProjectCustomerListWebApp
 
             app.UseEndpoints(endpoints =>
             {
+                endpoints.MapControllers(); //controller API will be called
                 endpoints.MapRazorPages();
             });
         }

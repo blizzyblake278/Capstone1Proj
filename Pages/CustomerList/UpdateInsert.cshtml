@@ -1,14 +1,16 @@
 ﻿@page
-@model CapstoneProjectCustomerListWebApp.Pages.CustomerList.EditModel
-
-
+@model CapstoneProjectCustomerListWebApp.Pages.CustomerList.UpdateInsertModel
 <br />
-<h2 class="text-info">Edit Customer</h2>
+<h2 class="text-info">@(Model.Customer.Id!=0? "Edit":"Create") Customer</h2>
 <br />
 
 <div class="border container" style="padding: 30px;">
     <form method="post">
-        <input type="hidden" asp-for="Customer.Id"/>
+        @if (Model.Customer.Id != 0)
+        {
+            <input type="hidden" asp-for="Customer.Id"/>
+
+        }
         <div class="text-danger" asp-validation-summary="ModelOnly"></div>
         <div class="form-group row">
             <div class="col-3">
@@ -41,8 +43,8 @@
         </div>
         <div class="form-group row">
             <div class="col-2 offset-3">
-                <input type="submit" value="Update" class="btn btn-primary form-control"/>
-
+                @*If not null, then disp update, else create*@
+                <button type="submit" class="btn btn-primary form-control">@(Model.Customer.Id != 0 ? "Update" : "Create")</button>
             </div>
             @*this is not expanding out as it should*@
             <div class="col-3">
@@ -52,3 +54,5 @@
         </div>
     </form>
 </div>
+
+
