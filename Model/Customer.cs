@@ -1,8 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 
-
-namespace CapstoneProjectCustomerListWebApp.CustomerList
+namespace CapstoneProjectCustomerListWebApp.Model
 {
     public class Customer
     {
@@ -17,5 +16,7 @@ namespace CapstoneProjectCustomerListWebApp.CustomerList
         //NUGET CLI
 
         public DateTime TimeStamp { get; set; }
+      
+
     }
 }

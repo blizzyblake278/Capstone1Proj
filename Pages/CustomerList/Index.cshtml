@@ -10,69 +10,19 @@
     <div class="col-6">
         <h2 class="text-info">Customer List</h2>
     </div>
-    <div class="col-3">
-        <a asp-page="Create"class="btn btn-info form-control text-white">Create New Customer</a>
-    </div>
-    <div class="col-3">
-        <a asp-page="UpdateInsert"class="btn btn-info form-control text-white">Add(Update) New Customer</a>
+
+    <div class="col-3 offset-3">
+            <a asp-page="UpdateInsert"class="btn btn-info form-control text-white">Add(Update) New Customer</a>
     </div>
 
-    <div class="col-12 border p-3 mt-3">
-        <form method="post">
-            @if (Model.Customers.Any())
-            {
-                <table class=" table table-striped border">
-                    <tr class="table-secondary">
-                        @*tag helpers are preferred over html helpers*@
-                        <th>
-                            <label asp-for="Customers.FirstOrDefault().CustomerName"></label>
-                        </th>
-                        <th>
-                            @*@Html.DisplayNameFor(m =>m.Customers.FirstOrDefault().TimeSpan)*@
-                            <label asp-for="Customers.FirstOrDefault().TimeSpan"></label>
-                        </th>
-                        <th>
-                            <label asp-for="Customers.FirstOrDefault().TimeStamp"></label>
-                        </th>
-
-                    </tr>
-                    @foreach (var item in Model.Customers)
-                    {
-                        <tr>
-                            <td>
-                                @Html.DisplayFor((m=>item.CustomerName))
-                            </td>
-                            <td>
-                                @Html.DisplayFor((m=>item.TimeSpan))
-                            </td>
-                            <td>
-                                @Html.DisplayFor((m=>item.TimeStamp))
-                            </td>
-                            <td>
-                                <button asp-page-handler="Delete" asp-route-id="@item.Id"  onclick="return confirm('Are you sure you want to delete this entry?')"class="btn btn-danger btn-sm">Delete</button>
-                                <a asp-page="Edit" asp-route-id="@item.Id" class="btn btn-success btn-sm text-white">Edit</a>
-                            </td>
-                        </tr>
-                    }
-                </table>
-            }
-            else
-            {
-                <p>No Customers Available</p>
-
-            }
-        </form>
-
-    </div>
-    <div class="col-12 border p-3" >
-        <table id="DT_load" class="table table-striped table-bordered" style="width:100%">
+    <div class="col-12 border p-3">
+        <table id="DT_load" class="table table-striped table-bordered" style="width: 100%">
             <thead>
-            <tr>
-                <th>Customer Name</th>
-                <th>Time Span</th>
-                <th>Time Stamp</th>
-                <th></th>
-            </tr>
+                <tr>
+                    <th>Customer Name</th>
+                    <th>Time Span</th>
+                    <th>Time Stamp</th>
+                    <th></th>
             </thead>
         </table>
     </div>
