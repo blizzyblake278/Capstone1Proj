@@ -15,8 +15,7 @@ namespace CapstoneProjectCustomerListWebApp.Model
         //IF YOU ADD ANY NEW PROP, YOU MUST ADD A NEW MIGRATION THRU 
         //NUGET CLI
 
-        public DateTime TimeStamp { get; set; }
-      
+        public DateTime TimeStamp { get; set; } = DateTime.Now;
 
     }
 }
