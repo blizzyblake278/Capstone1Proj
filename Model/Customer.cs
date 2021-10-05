@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
+using Microsoft.AspNetCore.Mvc;
 
 namespace CapstoneProjectCustomerListWebApp.Model
 {
@@ -14,7 +15,7 @@ namespace CapstoneProjectCustomerListWebApp.Model
 
         //IF YOU ADD ANY NEW PROP, YOU MUST ADD A NEW MIGRATION THRU 
         //NUGET CLI
-
+        [BindProperty, DisplayFormat(DataFormatString = "{0:yyyy-MM-ddTHH:mm}", ApplyFormatInEditMode = true)]
         public DateTime TimeStamp { get; set; } = DateTime.Now;
 
     }
