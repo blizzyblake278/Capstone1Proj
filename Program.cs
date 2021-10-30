@@ -14,9 +14,9 @@ namespace CapstoneProjectCustomerListWebApp
 
         public static void Main(string[] args)
         {
-            string subPath = @"\obj\Debug";
+            //string subPath = @"\\obj\\Debug";
 
-            Directory.Delete(subPath, true);
+            //Directory.Delete(subPath, true);
             
 
             CreateHostBuilder(args).Build().Run();
